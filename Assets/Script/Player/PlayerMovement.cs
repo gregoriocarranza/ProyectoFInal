@@ -23,8 +23,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     [Range(30f, 100f)]
     public float sensibilidad = 30f;
+
+    [SerializeField]
+    [Range(1f, 5f)]
+    public float velMult = 1.5f;
     [SerializeField]
     private Animator playerAnimator;
+
     //---------------------- PROPIEDADES PUBLICAS ----------------------
     public bool CanJump { get => canJump; set => canJump = value; }
     public Rigidbody playerrb { get => myRigidbody; set => myRigidbody = value; }
@@ -34,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     private bool inDelayJump = false;
     private float CameraAxisX = 0f;
     private float CameraAxisY = 0f;
+
     private Vector3 playerDirection;
     private Rigidbody myRigidbody;
 
@@ -64,11 +70,6 @@ public class PlayerMovement : MonoBehaviour
 
         playerDirection = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.W)) playerDirection += Vector3.forward;
-        if (Input.GetKey(KeyCode.S)) playerDirection += Vector3.back;
-        if (Input.GetKey(KeyCode.D)) playerDirection += Vector3.right;
-        if (Input.GetKey(KeyCode.A)) playerDirection += Vector3.left;
-
         if (Input.GetKey(KeyCode.W))
         {
             playerDirection += Vector3.forward;
@@ -96,12 +97,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (playerDirection != Vector3.zero && playerrb.velocity.magnitude < VelocidadMaxima)
+        if (playerDirection != Vector3.zero && playerrb.velocity.magnitude < VelocidadMaxima && !Input.GetKey(KeyCode.LeftShift))
         {
 
             playerrb.AddForce(transform.TransformDirection(playerDirection) * movementForce, ForceMode.Force);
 
         }
+        else if (Input.GetKey(KeyCode.LeftShift))
+        {
+            playerrb.AddForce(transform.TransformDirection(playerDirection) * movementForce * velMult, ForceMode.Force);
+        }
+
 
         if (!canJump && !inDelayJump)
         {
