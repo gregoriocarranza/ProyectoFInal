@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 39167308}
   - component: {fileID: 39167307}
   m_Layer: 0
-  m_Name: CM vcam1
+  m_Name: CM vcam_3p
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -367,7 +367,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150961496}
-  m_LocalRotation: {x: 0.16192368, y: 0.0000148635445, z: -0.0000024389458, w: 0.9868033}
+  m_LocalRotation: {x: 0.16192366, y: 0.000014899727, z: -0.0000024448827, w: 0.9868033}
   m_LocalPosition: {x: -8.790241, y: 2.6984928, z: -16.221247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -631,7 +631,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581660162}
-  m_LocalRotation: {x: 0.16192368, y: 0.0000148635445, z: -0.0000024389458, w: 0.9868033}
+  m_LocalRotation: {x: 0.16192366, y: 0.000014899727, z: -0.0000024448827, w: 0.9868033}
   m_LocalPosition: {x: -8.790241, y: 2.6984928, z: -16.221247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
