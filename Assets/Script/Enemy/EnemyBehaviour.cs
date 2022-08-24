@@ -46,6 +46,7 @@ public class EnemyBehaviour : MonoBehaviour
     void LookPlayer()
     {
         transform.LookAt(target);
+        
     }
 
     void SeguirJugador()

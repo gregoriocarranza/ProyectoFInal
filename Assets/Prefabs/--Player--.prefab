@@ -2164,6 +2164,8 @@ GameObject:
   - component: {fileID: 6967749412073451902}
   - component: {fileID: 6967749412073451903}
   - component: {fileID: 6967749412073451900}
+  - component: {fileID: 1999599237}
+  - component: {fileID: 1999599238}
   m_Layer: 6
   m_Name: --Player--
   m_TagString: Untagged
@@ -2240,6 +2242,32 @@ MonoBehaviour:
   sensibilidad: 30
   velMult: 1.5
   playerAnimator: {fileID: 1968921935251002273}
+--- !u!114 &1999599237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967749412073451901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13bdcef0a4f47848a4e65020771ea7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifes: 3
+  dificult: 1
+--- !u!114 &1999599238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967749412073451901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1c5aa0609d5bc44a1692e0c06577d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6967749412088770833
 GameObject:
   m_ObjectHideFlags: 0
