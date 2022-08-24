@@ -19,7 +19,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     [SerializeField]
     EnemyType enemigo;
-
+    [SerializeField]
+    private Animator EnemyAnimator;
     void Start()
     {
     }
@@ -55,6 +56,11 @@ public class EnemyBehaviour : MonoBehaviour
         if (direction.magnitude > 2f)
         {
             transform.position += direction.normalized * Speed * Time.deltaTime;
+            EnemyAnimator.SetTrigger("adelante");
+        }
+        else
+        {
+            EnemyAnimator.SetTrigger("Reposo");
         }
     }
 }
