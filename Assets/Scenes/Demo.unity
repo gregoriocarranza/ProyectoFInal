@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.004051249, g: 0.00022138242, b: 0.000000055370208, a: 1}
+  m_IndirectSpecularColor: {r: 0.004051245, g: 0.00022138223, b: 0.000000055370208, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4859,7 +4859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 642939483811635067, guid: ff21a9fccb0363d4aa3fd2d5cc85c058, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.211
       objectReference: {fileID: 0}
     - target: {fileID: 642939483811635067, guid: ff21a9fccb0363d4aa3fd2d5cc85c058, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9819,7 +9819,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 4.0557027, y: 1}
+    m_SensorSize: {x: 4.4447513, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
