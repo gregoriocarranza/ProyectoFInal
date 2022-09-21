@@ -13,7 +13,7 @@ public class TargetsManager : MonoBehaviour
     private float CameraAxisX;
     [SerializeField]
     [Range(0f, 100f)]
-    public float sensibilidad = 15f;
+    public float sensibilidad = 5f;
     private void Start()
     {
 
@@ -21,7 +21,7 @@ public class TargetsManager : MonoBehaviour
     void LateUpdate()
     {
         CameraAxisX = Input.GetAxis("Mouse Y");
-        _1P_target.transform.position = _1P_target.transform.position + new Vector3(-CameraAxisX * sensibilidad * Time.deltaTime, 0, 0);
+        _1P_target.transform.position += new Vector3(0, CameraAxisX * sensibilidad, 0);
         // startingRotation.y = Mathf.Clamp(startingRotation.y, -clampAngel, clampAngel);
         // state.RawOrientation = Quaternion.Euler(startingRotation.y, 0, 0);
 

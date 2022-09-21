@@ -18,10 +18,9 @@ public class TorchController : MonoBehaviour
 
     private void LateUpdate()
     {
-        // transform.localRotation = Quaternion.Euler(Target.transform.position);
+
         transform.LookAt(Target.transform.position);
-        // Quaternion newRotation = Quaternion.Euler(Target.transform.position);
-        // transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, 200f * Time.deltaTime);
+
 
     }
 }

@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerCollision : MonoBehaviour
 {
     private PlayerData playerdata;
+
+    public static event Action<int> Damage;
+    public static event Action<int> Heal;
 
     void Start()
     {
@@ -26,7 +30,11 @@ public class PlayerCollision : MonoBehaviour
                 break;
             case "Enemy":
                 Destroy(other.gameObject);
-                playerdata.kill(1);
+                Damage?.Invoke(1);
+                break;
+            case "TankMunition":
+                Damage?.Invoke(1);
+                Destroy(other.gameObject);
                 break;
             default:
                 Debug.Log(other.gameObject.name);
