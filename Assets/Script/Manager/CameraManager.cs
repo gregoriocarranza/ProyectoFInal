@@ -15,8 +15,8 @@ public class CameraManager : CinemachineExtension
             if (stage == CinemachineCore.Stage.Aim)
             {
                 if (startingRotation == null) startingRotation = transform.localRotation.eulerAngles;
-                float CameraAxisX = Input.GetAxis("Mouse Y");
-                startingRotation.y += CameraAxisX * verticalSpeed * Time.deltaTime;
+                float CameraAxisY = Input.GetAxis("Mouse Y");
+                startingRotation.y += CameraAxisY * verticalSpeed * Time.deltaTime;
                 startingRotation.y = Mathf.Clamp(startingRotation.y, -clampAngel, clampAngel);
                 state.RawOrientation = Quaternion.Euler(startingRotation.y, 0, 0);
             }

@@ -31,9 +31,11 @@ public class PlayerMovement : MonoBehaviour
     private Animator playerAnimator;
 
     //---------------------- PROPIEDADES PUBLICAS ----------------------
+
     public bool CanJump { get => canJump; set => canJump = value; }
     public Rigidbody playerrb { get => myRigidbody; set => myRigidbody = value; }
     public float VelocidadMaxima { get => velocidadMaxima; set => velocidadMaxima = value; }
+    
     //---------------------- PROPIEDADES PRIVADAS ----------------------
     private bool canJump = true;
     private bool inDelayJump = false;
