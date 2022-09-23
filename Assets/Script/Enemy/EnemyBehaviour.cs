@@ -4,64 +4,63 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public Transform target;
+    [SerializeField] protected EnemyData enemydata;
 
-    [SerializeField]
-    [Range(1f, 5f)]
-    private float Speed = 1f;
-
-    enum EnemyType
+    protected void LookPlayer(Transform target, GameObject ToTansform)
     {
-        Empty,
-        Looking,
-        Follow
+        ToTansform.transform.LookAt(target);
+
     }
 
-    [SerializeField]
-    EnemyType enemigo;
-    [SerializeField]
-    private Animator EnemyAnimator;
-    void Start()
+    protected void SeguirJugador(Animator EnemyAnimator, Transform target, GameObject ToTansform)
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        switch (enemigo)
-        {
-            case EnemyType.Empty:
-                break;
-            case EnemyType.Follow:
-                SeguirJugador();
-                break;
-            case EnemyType.Looking:
-                LookPlayer();
-                break;
-            default:
-                break;
-        }
-    }
-
-    void LookPlayer()
-    {
-        transform.LookAt(target);
-        
-    }
-
-    void SeguirJugador()
-    {
-        LookPlayer();
+        LookPlayer(target, ToTansform);
         Vector3 direction = (target.position - transform.position);
 
         if (direction.magnitude > 2f)
         {
-            transform.position += direction.normalized * Speed * Time.deltaTime;
+            ToTansform.transform.position += direction.normalized * enemydata.Speed * Time.deltaTime;
             EnemyAnimator.SetTrigger("adelante");
         }
         else
         {
             EnemyAnimator.SetTrigger("Reposo");
         }
+    }
+
+    // --------------------------------------------------------raycast
+
+    [SerializeField] private GameObject bullet;
+
+    private bool canShoot = true;
+
+
+
+    protected void EnemyRaycast(bool Is_follower, Transform FirstPoint, float rayDistance, Transform target, Animator EnemyAnimator, GameObject ToTansform)
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(FirstPoint.position, FirstPoint.TransformDirection(Vector3.forward), out hit, rayDistance))
+        {
+            // Debug.Log(hit.transform.tag);
+            if (hit.transform.CompareTag("Player") && Is_follower == false)
+            {
+                LookPlayer(target, ToTansform);
+                if (canShoot)
+                {
+                    Instantiate(bullet, FirstPoint.transform.position, FirstPoint.transform.rotation);
+                    canShoot = false;
+                    Invoke("delayShoot", enemydata.DelayShoot);
+                }
+
+            }
+            else if (hit.transform.CompareTag("Player") && Is_follower)
+            {
+                SeguirJugador(EnemyAnimator, target, ToTansform);
+            }
+        }
+    }
+    void delayShoot()
+    {
+        canShoot = true;
     }
 }
