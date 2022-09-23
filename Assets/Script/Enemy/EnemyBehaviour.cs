@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] protected EnemyData enemydata;
+    public LayerMask IgnoreMe;
 
     protected void LookPlayer(Transform target, GameObject ToTansform)
     {
@@ -39,7 +40,7 @@ public class EnemyBehaviour : MonoBehaviour
     protected void EnemyRaycast(bool Is_follower, Transform FirstPoint, float rayDistance, Transform target, Animator EnemyAnimator, GameObject ToTansform)
     {
         RaycastHit hit;
-        if (Physics.Raycast(FirstPoint.position, FirstPoint.TransformDirection(Vector3.forward), out hit, rayDistance))
+        if (Physics.Raycast(FirstPoint.position, FirstPoint.TransformDirection(Vector3.forward), out hit, rayDistance, ~IgnoreMe))
         {
             // Debug.Log(hit.transform.tag);
             if (hit.transform.CompareTag("Player") && Is_follower == false)
