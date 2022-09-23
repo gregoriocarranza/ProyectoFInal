@@ -23,6 +23,15 @@ public class BulletBehaviour : MonoBehaviour
         Move();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag("Player"))
+        {
+            Debug.Log("Entrand");
+            DestroyMunition();
+        }
+
+    }
     private void Move()
     {
         transform.Translate(direction * Speed * Time.deltaTime);

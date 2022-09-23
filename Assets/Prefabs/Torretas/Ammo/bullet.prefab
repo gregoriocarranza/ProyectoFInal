@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1614881477485819471}
   - component: {fileID: 4109756261870828476}
   - component: {fileID: 7581998266352204838}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3010309008818659391}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -107,8 +107,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3966778897414166198}
-  - component: {fileID: 386848401}
-  m_Layer: 7
+  - component: {fileID: 7558572803214030391}
+  - component: {fileID: -5236565976403471197}
+  m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +132,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &386848401
+--- !u!114 &7558572803214030391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,9 +141,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 7683508612842917299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7b3022fdf38bd442af6cffce6f236f0, type: 3}
+  m_Script: {fileID: 11500000, guid: a94ecfb98cfa222458b8e924f450b069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 1}
   Speed: 5
-  DestroyTime: 4
+  DestroyTime: 3
+--- !u!54 &-5236565976403471197
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683508612842917299}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
