@@ -604,7 +604,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150961496}
-  m_LocalRotation: {x: 0.16192368, y: 0.000014804736, z: -0.000002429296, w: 0.9868033}
+  m_LocalRotation: {x: 0.16192366, y: 0.000014840918, z: -0.000002435233, w: 0.9868033}
   m_LocalPosition: {x: 26.944674, y: -3.2955399, z: 10.599504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -692,9 +692,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1374141652}
     m_Modifications:
+    - target: {fileID: 3380727917404374896, guid: 8470b05959237e749a1b766b78022261, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380727917404374898, guid: 8470b05959237e749a1b766b78022261, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3380727917404374900, guid: 8470b05959237e749a1b766b78022261, type: 3}
       propertyPath: m_Name
       value: Torreta minigun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380727917404374900, guid: 8470b05959237e749a1b766b78022261, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380727917404374902, guid: 8470b05959237e749a1b766b78022261, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380727917404374908, guid: 8470b05959237e749a1b766b78022261, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380727917404374910, guid: 8470b05959237e749a1b766b78022261, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3380727917404609364, guid: 8470b05959237e749a1b766b78022261, type: 3}
       propertyPath: m_RootOrder
@@ -744,6 +768,18 @@ PrefabInstance:
       propertyPath: bullet
       value: 
       objectReference: {fileID: 7683508612842917299, guid: 1ebae3985d93c8341b64596d4d59ecf6, type: 3}
+    - target: {fileID: 7362390940348271678, guid: 8470b05959237e749a1b766b78022261, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1999599233}
+    - target: {fileID: 7804959793509539273, guid: 8470b05959237e749a1b766b78022261, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920497963289851268, guid: 8470b05959237e749a1b766b78022261, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8470b05959237e749a1b766b78022261, type: 3}
 --- !u!1 &1374141651
@@ -1094,7 +1130,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 4.209796, y: 1}
+    m_SensorSize: {x: 3.9723756, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1110,7 +1146,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581660162}
-  m_LocalRotation: {x: 0.16192368, y: 0.000014804736, z: -0.000002429296, w: 0.9868033}
+  m_LocalRotation: {x: 0.16192366, y: 0.000014840918, z: -0.000002435233, w: 0.9868033}
   m_LocalPosition: {x: 26.944674, y: -3.2955399, z: 10.599504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

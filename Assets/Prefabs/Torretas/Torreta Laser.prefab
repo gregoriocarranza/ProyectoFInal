@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8622048214748506032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BOO42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2009454330052827708}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2009454330571493995}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1p
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2009454330766172915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2009454330908989197}
   - component: {fileID: 2009454330908989196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 2009454330956980853}
   - component: {fileID: 2009454330956980858}
   - component: {fileID: 2338518691653838147}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torreta Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2009454331112838080}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2009454331675047128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
