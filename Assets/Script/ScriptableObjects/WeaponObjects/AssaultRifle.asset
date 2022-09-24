@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 22
   maxDistance: 200
   fireRate: 600
-  currentAmmo: 31
-  magSieze: 31
-  realoadTime: 1.5
+  currentAmmo: 32
+  magSize: 32
+  reloadTime: 1.5
   reloading: 0
