@@ -27,7 +27,6 @@ public class BulletBehaviour : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            Debug.Log("Entrand");
             DestroyMunition();
         }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] protected EnemyData enemydata;
-    public LayerMask Munition;
+    private LayerMask Munition;
 
     protected void LookPlayer(Transform target, GameObject ToTansform)
     {
@@ -35,6 +35,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private bool canShoot = true;
 
+    [SerializeField] private Transform[] Outputs;
 
 
     protected void EnemyRaycast(bool Is_follower, Transform FirstPoint, float rayDistance, Transform target, Animator EnemyAnimator, GameObject ToTansform)
