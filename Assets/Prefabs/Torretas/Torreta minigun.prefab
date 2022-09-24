@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3380727917404609360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3380727917404609362}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 3380727917404609364}
   - component: {fileID: 3380727917413872820}
   - component: {fileID: 7362390940348271678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torreta minigun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3380727917404609366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3380727917404609372}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3380727917404609374}
   - component: {fileID: 3380727917418039924}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8017004446901066875}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: p1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7654141890265371757}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: B0082
   m_TagString: Untagged
   m_Icon: {fileID: 0}

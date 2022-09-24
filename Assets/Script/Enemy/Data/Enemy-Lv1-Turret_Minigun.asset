@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Enemy-Lv1-Turret_Minigun
   m_EditorClassIdentifier: 
   Speed: 1
-  DelayShoot: 0.3
+  DelayShoot: 0.221
+  bullet: {fileID: 7683508612842917299, guid: 1ebae3985d93c8341b64596d4d59ecf6, type: 3}
   Is_follower: 0
   rayDistance: 20
   life: 2
