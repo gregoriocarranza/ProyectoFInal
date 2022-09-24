@@ -55,8 +55,8 @@ public class EnemyBehaviour : MonoBehaviour
                     {
                         i = 0;
                     }
-                    Debug.Log(i);
-                    Debug.Log(Outputs.Length);
+                    // Debug.Log(i);
+                    // Debug.Log(Outputs.Length);
 
                     Instantiate(enemydata.bullet, Outputs[i].transform.position, Outputs[i].transform.rotation);
                     i++;

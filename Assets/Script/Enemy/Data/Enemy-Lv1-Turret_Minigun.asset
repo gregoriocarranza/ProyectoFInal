@@ -16,5 +16,5 @@ MonoBehaviour:
   Is_follower: 0
   rayDistance: 20
   life: 2
-  bullet: {fileID: 7683508612842917299, guid: 1ebae3985d93c8341b64596d4d59ecf6, type: 3}
+  bullet: {fileID: 3535676639723455902, guid: 56ed4186723b20e4eb5ebbed91631b5e, type: 3}
   DelayShoot: 0.2
