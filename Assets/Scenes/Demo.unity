@@ -758,7 +758,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 44524891}
+  - {fileID: 6967749412214542038}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4181,7 +4181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9847b2310969b404b933a5c027f220e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _1P_target: {fileID: 810504497}
+  _1P_target: {fileID: 6967749411183424821}
   _3P_target: {fileID: 0}
   CameraAxisX: 0
   sensibilidad: 0.5
@@ -4366,8 +4366,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 442594301}
-  m_Follow: {fileID: 1759778943}
+  m_LookAt: {fileID: 6967749411542428127}
+  m_Follow: {fileID: 6967749412315083883}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -6434,11 +6434,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1980035585 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6967749410787248869, guid: 2b356a8d320031142a3dcadddb2c8379, type: 3}
-  m_PrefabInstance: {fileID: 409944023}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1997608473
 GameObject:
   m_ObjectHideFlags: 0
@@ -6760,8 +6755,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1980035585}
-  m_Follow: {fileID: 1503797866}
+  m_LookAt: {fileID: 6967749411183424818}
+  m_Follow: {fileID: 6967749411382479115}
   m_Lens:
     FieldOfView: 60.000004
     OrthographicSize: 5
