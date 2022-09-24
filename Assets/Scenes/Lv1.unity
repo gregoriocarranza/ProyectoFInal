@@ -635,33 +635,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1374141652}
     m_Modifications:
-    - target: {fileID: 3380727917404374896, guid: 8470b05959237e749a1b766b78022261, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3380727917404374898, guid: 8470b05959237e749a1b766b78022261, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 3380727917404374900, guid: 8470b05959237e749a1b766b78022261, type: 3}
       propertyPath: m_Name
       value: Torreta minigun
-      objectReference: {fileID: 0}
-    - target: {fileID: 3380727917404374900, guid: 8470b05959237e749a1b766b78022261, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3380727917404374902, guid: 8470b05959237e749a1b766b78022261, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3380727917404374908, guid: 8470b05959237e749a1b766b78022261, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3380727917404374910, guid: 8470b05959237e749a1b766b78022261, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3380727917404609364, guid: 8470b05959237e749a1b766b78022261, type: 3}
       propertyPath: m_RootOrder
@@ -708,21 +684,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7362390940348271678, guid: 8470b05959237e749a1b766b78022261, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 7683508612842917299, guid: 1ebae3985d93c8341b64596d4d59ecf6, type: 3}
-    - target: {fileID: 7362390940348271678, guid: 8470b05959237e749a1b766b78022261, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1999599233}
-    - target: {fileID: 7804959793509539273, guid: 8470b05959237e749a1b766b78022261, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8920497963289851268, guid: 8470b05959237e749a1b766b78022261, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8470b05959237e749a1b766b78022261, type: 3}
 --- !u!1 &1374141651
@@ -1073,7 +1037,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.9155314, y: 1}
+    m_SensorSize: {x: 3.8964577, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

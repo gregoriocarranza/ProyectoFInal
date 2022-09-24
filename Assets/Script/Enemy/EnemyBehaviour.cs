@@ -36,6 +36,7 @@ public class EnemyBehaviour : MonoBehaviour
     private bool canShoot = true;
 
     [SerializeField] private Transform[] Outputs;
+    private int i = 0;
 
 
     protected void EnemyRaycast(bool Is_follower, Transform FirstPoint, float rayDistance, Transform target, Animator EnemyAnimator, GameObject ToTansform)
@@ -47,9 +48,18 @@ public class EnemyBehaviour : MonoBehaviour
             if (hit.transform.CompareTag("Player") && Is_follower == false)
             {
                 LookPlayer(target, ToTansform);
+
                 if (canShoot)
                 {
-                    Instantiate(enemydata.bullet, FirstPoint.transform.position, FirstPoint.transform.rotation);
+                    if (i >= Outputs.Length)
+                    {
+                        i = 0;
+                    }
+                    Debug.Log(i);
+                    Debug.Log(Outputs.Length);
+
+                    Instantiate(enemydata.bullet, Outputs[i].transform.position, Outputs[i].transform.rotation);
+                    i++;
                     canShoot = false;
                     Invoke("delayShoot", enemydata.DelayShoot);
                 }
@@ -64,5 +74,6 @@ public class EnemyBehaviour : MonoBehaviour
     void delayShoot()
     {
         canShoot = true;
+
     }
 }

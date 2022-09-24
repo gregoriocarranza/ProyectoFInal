@@ -30,6 +30,7 @@ Transform:
   m_Children:
   - {fileID: 2009454330052827708}
   - {fileID: 2009454330571493995}
+  - {fileID: 1031945545053380602}
   m_Father: {fileID: 2009454330956980853}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88,14 +89,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009454330571493992}
-  m_LocalRotation: {x: -0.016558586, y: -0, z: -0, w: 0.99986297}
-  m_LocalPosition: {x: 27, y: 122.4, z: 127.6}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27, y: 141.3, z: 127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8622048214748506032}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2009454330766172912
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemydata: {fileID: 11400000, guid: b08c670026de24a499b15a650acab1f5, type: 2}
-  bullet: {fileID: 0}
+  Outputs:
+  - {fileID: 1031945545053380602}
   target: {fileID: 0}
   EnemyAnimator: {fileID: 0}
   FirstPoint: {fileID: 2009454330571493995}
@@ -352,4 +354,35 @@ Transform:
   - {fileID: 2009454331112838080}
   m_Father: {fileID: 2009454330766172915}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2148574946806814464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031945545053380602}
+  m_Layer: 8
+  m_Name: outpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1031945545053380602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2148574946806814464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27, y: 141.3, z: 127}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8622048214748506032}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
