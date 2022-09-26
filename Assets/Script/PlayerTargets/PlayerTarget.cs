@@ -8,6 +8,7 @@ public class PlayerTarget : MonoBehaviour, IDamageable {
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("Entro a TakeDamage en PlayerTarget");
         health -= damage;
         if (health <= 0) Destroy(gameObject);
     }

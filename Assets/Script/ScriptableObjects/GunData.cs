@@ -11,7 +11,7 @@ public class GunData : ScriptableObject {
     public new string name;
 
     [Header("Shooting")]
-    public float damage;
+    public int damage;
     public float maxDistance;
     public float fireRate;
 

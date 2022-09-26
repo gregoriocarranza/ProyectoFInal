@@ -7,6 +7,10 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] protected EnemyData enemydata;
     private LayerMask Munition;
 
+    void Start(){
+        Gun.shotEnemy += OnTakeDamage;
+    }
+    
     protected void LookPlayer(Transform target, GameObject ToTansform)
     {
         ToTansform.transform.LookAt(target);
@@ -75,5 +79,9 @@ public class EnemyBehaviour : MonoBehaviour
     {
         canShoot = true;
 
+    }
+
+    private void OnTakeDamage(int damage){
+        enemydata.health -= damage;
     }
 }

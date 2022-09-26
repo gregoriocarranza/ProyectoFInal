@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform muzzle;
 
     private float timeSinceLastShot; 
+    public static Action<int> shotEnemy;
     
     // Start is called before the first frame update
     void Start()
@@ -20,9 +22,10 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Color color = Color.blue;
         timeSinceLastShot += Time.deltaTime;
 
-        Debug.DrawRay(muzzle.position, muzzle.forward);
+        Debug.DrawRay(muzzle.position, muzzle.forward, color);
     }
 
     public void StartReload() {
@@ -54,18 +57,19 @@ public class Gun : MonoBehaviour
                 if (Physics.Raycast(muzzle.position, muzzle.forward, out RaycastHit hitInfo, gunData.maxDistance))
                 {
                     Debug.Log("Raycast Hit");
-                    IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>();
-                    damageable?.TakeDamage(gunData.damage);
+
+                    if (hitInfo.transform.CompareTag("Enemy")){
+                        Debug.Log("Hit Enemy: " + hitInfo.transform.tag);
+                        shotEnemy?.Invoke(gunData.damage);
+                    }
+
+                    //IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>();
+                    //damageable?.TakeDamage(gunData.damage);
                 }
 
                 gunData.currentAmmo--;
                 timeSinceLastShot = 0;
-                //OnGunShot();
             }
         }
     }
-
-    /* private void OnGunShot() {
-        throw new NotImplementedException();
-    } */
 }
