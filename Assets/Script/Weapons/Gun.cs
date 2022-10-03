@@ -11,10 +11,14 @@ public class Gun : MonoBehaviour
 
     private float timeSinceLastShot; 
     public static Action<int> shotEnemy;
+
+    AudioSource audioData;
     
     // Start is called before the first frame update
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
+
         PlayerShoot.shootInput += Shoot;
         PlayerShoot.reloadInput += StartReload;
     }
@@ -48,12 +52,16 @@ public class Gun : MonoBehaviour
 
     private void Shoot()
     {    
+        //audioData.Play();
+        
         Debug.Log("Entro a Shoot de Gun");
         if (gunData.currentAmmo > 0)
         {
             if (CanShoot())
             {
-                Debug.Log("Can shoot");
+                // Play gun shooting sound
+                audioData.PlayOneShot(audioData.clip, 0.7F);
+
                 if (Physics.Raycast(muzzle.position, muzzle.forward, out RaycastHit hitInfo, gunData.maxDistance))
                 {
                     Debug.Log("Raycast Hit");
