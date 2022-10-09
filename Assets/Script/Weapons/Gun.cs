@@ -67,12 +67,19 @@ public class Gun : MonoBehaviour
                 {
                     Debug.Log("Raycast Hit");
 
-                    // Paso Vector3 Position del hit para hacer un vfx de impacto
+                    // Paso Vector3 Position y dirección normal del hit para hacer un vfx de impacto
                     gunHit?.Invoke(hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
 
                     if (hitInfo.transform.CompareTag("Enemy")){
                         Debug.Log("Hit Enemy: " + hitInfo.transform.tag);
                         shotEnemy?.Invoke(gunData.damage);
+                    }
+
+                    if (hitInfo.transform.CompareTag("WoodenCrate")){
+                        Debug.Log("Hit WoodenCrate: " + hitInfo.transform.tag);
+                        //hitInfo.SendMessage("TakeDamage", gunData.damage);
+                        //hitInfo.transform.TakeDamage(gunData.damage);
+                        hitInfo.collider.gameObject.GetComponent<WoodenCrateBehaviour>().TakeDamage(gunData.damage);
                     }
 
                     //IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>();
