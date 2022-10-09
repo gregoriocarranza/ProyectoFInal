@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         if (!canJump && !inDelayJump)
         {
 
-            playerrb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            playerrb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
             inDelayJump = true;
             Invoke("DelayNextJump", jumpDelay);
         }
