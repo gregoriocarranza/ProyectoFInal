@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
 
     private float timeSinceLastShot; 
     public static Action<int> shotEnemy;
+    public static Action<Vector3, Quaternion> gunHit;
 
     AudioSource audioData;
     
@@ -65,6 +66,9 @@ public class Gun : MonoBehaviour
                 if (Physics.Raycast(muzzle.position, muzzle.forward, out RaycastHit hitInfo, gunData.maxDistance))
                 {
                     Debug.Log("Raycast Hit");
+
+                    // Paso Vector3 Position del hit para hacer un vfx de impacto
+                    gunHit?.Invoke(hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
 
                     if (hitInfo.transform.CompareTag("Enemy")){
                         Debug.Log("Hit Enemy: " + hitInfo.transform.tag);
