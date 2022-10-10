@@ -15,7 +15,8 @@ public class EnemyData : ScriptableObject
     [SerializeField] public GameObject bullet;
     [SerializeField][Range(0f, 10f)] public float DelayShoot = 1f;
 
-
-
+    [Header("Sonidos")]
+    public AudioClip ChargeShoot;
+    public AudioClip Shoot;
 
 }

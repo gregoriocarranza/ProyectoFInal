@@ -6,11 +6,16 @@ public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] protected EnemyData enemydata;
     private LayerMask Munition;
+    AudioSource audioPlayer;
 
-    void Start(){
+
+
+    void Start()
+    {
+        audioPlayer = GetComponent<AudioSource>();
         Gun.shotEnemy += OnTakeDamage;
     }
-    
+
     protected void LookPlayer(Transform target, GameObject ToTansform)
     {
         ToTansform.transform.LookAt(target);
@@ -65,6 +70,7 @@ public class EnemyBehaviour : MonoBehaviour
                     Instantiate(enemydata.bullet, Outputs[i].transform.position, Outputs[i].transform.rotation);
                     i++;
                     canShoot = false;
+                    Invoke("chargeShoot", enemydata.DelayShoot - 1f);
                     Invoke("delayShoot", enemydata.DelayShoot);
                 }
 
@@ -73,15 +79,25 @@ public class EnemyBehaviour : MonoBehaviour
             {
                 SeguirJugador(EnemyAnimator, target, ToTansform);
             }
+
         }
+    }
+    void chargeShoot()
+    {
+        Debug.Log("Cargando");
+        audioPlayer.PlayOneShot(enemydata.ChargeShoot);
+
     }
     void delayShoot()
     {
+        audioPlayer.PlayOneShot(enemydata.Shoot,0.7f);
         canShoot = true;
+        
 
     }
 
-    private void OnTakeDamage(int damage){
+    private void OnTakeDamage(int damage)
+    {
         enemydata.health -= damage;
     }
 }

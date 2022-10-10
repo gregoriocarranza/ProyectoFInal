@@ -15,6 +15,8 @@ MonoBehaviour:
   Speed: 1
   Is_follower: 0
   rayDistance: 20
-  life: 2
+  health: 2
   bullet: {fileID: 722621557783476447, guid: 1d54046dde1d6664ca15295ebf11d92d, type: 3}
-  DelayShoot: 0.8
+  DelayShoot: 1
+  ChargeShoot: {fileID: 0}
+  Shoot: {fileID: 0}
