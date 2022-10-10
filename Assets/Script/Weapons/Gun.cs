@@ -21,7 +21,9 @@ public class Gun : MonoBehaviour
         audioData = GetComponent<AudioSource>();
 
         PlayerShoot.shootInput += Shoot;
+        PlayerShoot.shootInput += OnTriggerPressed;
         PlayerShoot.reloadInput += StartReload;
+        PlayerShoot.triggerRelease += OnTriggerRelease;
     }
 
     // Update is called once per frame
@@ -49,7 +51,21 @@ public class Gun : MonoBehaviour
         gunData.reloading = false;
     }
 
-    private bool CanShoot() => !gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 60f);
+    private void OnTriggerPressed(){
+        gunData.triggerPressed = true;
+    }
+
+    private void OnTriggerRelease(){
+        gunData.triggerPressed = false;
+    }
+
+    //private bool CanShoot() => !gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 60f);
+
+    private bool CanShoot(){
+        // gunData.weaponType == 0 devuelve true si el arma es automática
+        if (gunData.weaponType == 0) return (!gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 60f));
+        else return (!gunData.reloading && !gunData.triggerPressed);
+    } 
 
     private void Shoot()
     {    
@@ -58,10 +74,12 @@ public class Gun : MonoBehaviour
         Debug.Log("Entro a Shoot de Gun");
         if (gunData.currentAmmo > 0)
         {
+            Debug.Log("currentAmmo mayor a 0");
             if (CanShoot())
             {
                 // Play gun shooting sound
                 audioData.PlayOneShot(audioData.clip, 0.7F);
+                Debug.Log("Can shoot");
 
                 if (Physics.Raycast(muzzle.position, muzzle.forward, out RaycastHit hitInfo, gunData.maxDistance))
                 {

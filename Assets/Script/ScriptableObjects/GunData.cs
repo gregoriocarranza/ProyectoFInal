@@ -4,11 +4,18 @@ using UnityEngine;
 
 // public class GunData : using UnityEngine;
 
-[CreateAssetMenu(fileName = "GunData", menuName = "Weapons/Gun")]
+[CreateAssetMenu(fileName = "GunData", menuName = "Weapons/GunData")]
 public class GunData : ScriptableObject {
     
+    public enum WeaponType
+    {
+        Automatic,
+        SingleShot,
+    };
+
     [Header("Info")]
     public new string name;
+    [SerializeField] public WeaponType weaponType;
 
     [Header("Shooting")]
     public int damage;
@@ -20,6 +27,7 @@ public class GunData : ScriptableObject {
     public int magSize;
     public float reloadTime;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool reloading;
+    public bool triggerPressed;
 }

@@ -7,6 +7,7 @@ public class PlayerShoot : MonoBehaviour
 {
     public static Action shootInput;
     public static Action reloadInput;
+    public static Action triggerRelease;
 
     [SerializeField] private KeyCode reloadKey;
 
@@ -15,6 +16,10 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetMouseButton(0)){
             shootInput?.Invoke();
+        }
+
+        if (Input.GetMouseButtonUp(0)){
+            triggerRelease?.Invoke();
         }
 
         if (Input.GetKeyDown(reloadKey)){

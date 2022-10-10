@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 902787638dcc6d64c95460bb5d4acdcd, type: 3}
-  m_Name: AssaultRifle
+  m_Name: PistolData
   m_EditorClassIdentifier: 
-  name: Assault Rifle
-  damage: 22
-  maxDistance: 200
-  fireRate: 600
-  currentAmmo: 32
-  magSize: 32
-  reloadTime: 1.5
+  name: Pistol
+  damage: 15
+  maxDistance: 110
+  fireRate: 1
+  currentAmmo: 12
+  magSize: 12
+  reloadTime: 1
   reloading: 0
