@@ -96,9 +96,12 @@ public class Gun : MonoBehaviour
 
                     if (hitInfo.transform.CompareTag("WoodenCrate")){
                         Debug.Log("Hit WoodenCrate: " + hitInfo.transform.tag);
-                        //hitInfo.SendMessage("TakeDamage", gunData.damage);
-                        //hitInfo.transform.TakeDamage(gunData.damage);
                         hitInfo.collider.gameObject.GetComponent<WoodenCrateBehaviour>().TakeDamage(gunData.damage);
+                    }
+
+                    if (hitInfo.transform.CompareTag("GlassBottle")){
+                        Debug.Log("Hit GlassBottle: " + hitInfo.transform.tag);
+                        hitInfo.collider.gameObject.GetComponent<GlassBottleBehaviour>().TakeDamage(gunData.damage);
                     }
 
                     //IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>();
