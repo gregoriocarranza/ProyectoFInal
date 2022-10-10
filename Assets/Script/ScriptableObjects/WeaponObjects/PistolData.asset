@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: PistolData
   m_EditorClassIdentifier: 
   name: Pistol
+  weaponType: 1
   damage: 15
   maxDistance: 110
-  fireRate: 1
+  fireRate: 1000
   currentAmmo: 12
   magSize: 12
   reloadTime: 1
   reloading: 0
+  triggerPressed: 0
