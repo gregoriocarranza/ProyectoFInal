@@ -5,9 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Munition Data", menuName = "Create Munition Data")]
 public class MunnitionData : ScriptableObject
 {
-    [Header("Munition Data center")]
-    [SerializeField] public Vector3 direction = new Vector3(0f, 1f, 0f);
-
+    [Header("Datos de municion")]
     [SerializeField][Range(0f, 5f)] public float Speed = 1f;
     [SerializeField][Range(1f, 10f)] public float DestroyTime = 1f;
+
+    [Header("Efectos de la municion")]
+
+    [SerializeField] public GameObject EfectoDeDestruccion;
 }

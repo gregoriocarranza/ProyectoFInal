@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1485407421934579862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: outpoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6033502783805820610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OUTPUTS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6886597304267616534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: outpoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3835486231024066644}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: outpoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7259449275913544009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: B012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2975689133042209888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2975689133042209890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,9 +241,9 @@ GameObject:
   - component: {fileID: 2975689133042209892}
   - component: {fileID: 2975689133033159556}
   - component: {fileID: 5143746028565812145}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torreta Misil
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -257,7 +257,7 @@ Transform:
   m_GameObject: {fileID: 2975689133042632772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2975689133042209902}
@@ -320,7 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2975689133042209894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2975689133042209900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _B03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2975689133042209902}
   - component: {fileID: 2975689133029033284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4375281822609054347}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: outpoint (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1887245084935156221}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: p1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5484491162726655864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: outpoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +565,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3848422893016640480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: outpoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6121718696198534398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: outpoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5563348526004680276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: outpoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

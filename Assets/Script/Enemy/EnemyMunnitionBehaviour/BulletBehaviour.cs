@@ -5,16 +5,13 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame updateVector3(0.443978846,-0.146086693,-0.0994603038)
-    public Vector3 direction = new Vector3(0f, 1f, 0f);
 
-    [SerializeField][Range(0f, 5f)] public float Speed = 1f;
-    [SerializeField][Range(1f, 10f)] public float DestroyTime = 1f;
-
+    [SerializeField] private MunnitionData munnitionData;
 
     void Start()
     {
-        Invoke("DestroyMunition", DestroyTime);
+        Invoke("DestroyMunition", munnitionData.DestroyTime);
+
     }
 
     // Update is called once per frame
@@ -25,15 +22,15 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Player"))
+        if (other.gameObject.layer != 8)
         {
             DestroyMunition();
+            Instantiate(munnitionData.EfectoDeDestruccion, gameObject.transform.position, gameObject.transform.rotation);
         }
-
     }
     private void Move()
     {
-        transform.Translate(direction * Speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * munnitionData.Speed * Time.deltaTime);
     }
 
     private void DestroyMunition()
