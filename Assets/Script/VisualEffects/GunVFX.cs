@@ -11,7 +11,7 @@ public class GunVFX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerShoot.shootInput += OnRoundShot;
+        Gun.shotFired += OnRoundShot;
         Gun.gunHit += OnGunHit;
     }
 

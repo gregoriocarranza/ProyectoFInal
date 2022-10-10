@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform muzzle;
 
     private float timeSinceLastShot; 
+    public static Action shotFired;
     public static Action<int> shotEnemy;
     public static Action<Vector3, Quaternion> gunHit;
 
@@ -77,9 +78,9 @@ public class Gun : MonoBehaviour
             Debug.Log("currentAmmo mayor a 0");
             if (CanShoot())
             {
+                shotFired?.Invoke();
                 // Play gun shooting sound
                 audioData.PlayOneShot(audioData.clip, 0.7F);
-                Debug.Log("Can shoot");
 
                 if (Physics.Raycast(muzzle.position, muzzle.forward, out RaycastHit hitInfo, gunData.maxDistance))
                 {
