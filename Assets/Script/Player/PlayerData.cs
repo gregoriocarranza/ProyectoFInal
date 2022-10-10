@@ -17,8 +17,8 @@ public class PlayerData : MonoBehaviour
     public static event Action<int> InitHp;
     private void Awake()
     {
-        PlayerCollision.Damage += kill;
-        PlayerCollision.Heal += heal;
+        BulletBehaviour.Damage += damage;
+        // PlayerCollision.Heal += heal;
     }
     void Start()
     {
@@ -46,9 +46,14 @@ public class PlayerData : MonoBehaviour
         OnChangeHP?.Invoke(lifes);
     }
 
-    public void kill(int a)
+    public void damage(int a)
     {
         lifes = lifes - (a * dificult);
         OnChangeHP?.Invoke(lifes);
+    }
+    private void OnDisable()
+    {
+        BulletBehaviour.Damage -= damage;
+        // BulletBehaviour.Heal -= heal;
     }
 }

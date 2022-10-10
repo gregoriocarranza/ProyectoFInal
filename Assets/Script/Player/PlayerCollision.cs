@@ -7,8 +7,8 @@ public class PlayerCollision : MonoBehaviour
 {
     private PlayerData playerdata;
 
-    public static event Action<int> Damage;
-    public static event Action<int> Heal;
+    // public static event Action<int> Damage;
+    // public static event Action<int> Heal;
 
     void Start()
     {
@@ -20,25 +20,25 @@ public class PlayerCollision : MonoBehaviour
     {
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        switch (other.gameObject.tag)
-        {
-            case "Powerup":
-                Destroy(other.gameObject);
-                playerdata.heal(2);
-                break;
-            case "Enemy":
-                Destroy(other.gameObject);
-                Damage?.Invoke(1);
-                break;
-            case "TankMunition":
-                Damage?.Invoke(1);
-                Destroy(other.gameObject);
-                break;
-            default:
-                Debug.Log(other.gameObject.name);
-                break;
-        }
-    }
+    // private void OnCollisionEnter(Collision other)
+    // {
+    //     switch (other.gameObject.tag)
+    //     {
+    //         case "Powerup":
+    //             Destroy(other.gameObject);
+    //             playerdata.heal(2);
+    //             break;
+    //         case "Enemy":
+    //             Destroy(other.gameObject);
+    //             Damage?.Invoke(1);
+    //             break;
+    //         case "TankMunition":
+    //             Damage?.Invoke(1);
+    //             Destroy(other.gameObject);
+    //             break;
+    //         default:
+    //             Debug.Log(other.gameObject.name);
+    //             break;
+    //     }
+    // }
 }

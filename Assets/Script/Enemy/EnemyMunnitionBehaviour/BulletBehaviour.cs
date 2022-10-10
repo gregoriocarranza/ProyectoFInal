@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BulletBehaviour : MonoBehaviour
 {
 
     [SerializeField] private MunnitionData munnitionData;
+    public static event Action<int> Damage;
 
     void Start()
     {
@@ -24,6 +26,10 @@ public class BulletBehaviour : MonoBehaviour
     {
         if (other.gameObject.layer != 8)
         {
+            if (other.gameObject.tag == "Player")
+            {
+                Damage?.Invoke(munnitionData.damage);
+            }
             DestroyMunition();
             Instantiate(munnitionData.EfectoDeDestruccion, gameObject.transform.position, gameObject.transform.rotation);
         }
