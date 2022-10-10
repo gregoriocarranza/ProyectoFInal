@@ -33,7 +33,7 @@ public class Gun : MonoBehaviour
         Color color = Color.blue;
         timeSinceLastShot += Time.deltaTime;
 
-        Debug.DrawRay(muzzle.position, muzzle.forward, color);
+        Debug.DrawRay(muzzle.position, muzzle.forward*10, color);
     }
 
     public void StartReload() {
