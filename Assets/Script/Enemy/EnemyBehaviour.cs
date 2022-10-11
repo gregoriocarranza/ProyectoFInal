@@ -12,8 +12,14 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Start()
     {
+        enemydata.health = 100;
         audioPlayer = GetComponent<AudioSource>();
         Gun.shotEnemy += OnTakeDamage;
+    }
+
+    void Update()
+    {
+        DeathCheck();
     }
 
     protected void LookPlayer(Transform target, GameObject ToTansform)
@@ -99,5 +105,12 @@ public class EnemyBehaviour : MonoBehaviour
     private void OnTakeDamage(int damage)
     {
         enemydata.health -= damage;
+    }
+
+    private void DeathCheck(){
+        if (enemydata.health <= 0) 
+        {
+            Destroy(gameObject);
+        }
     }
 }
