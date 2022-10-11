@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class WeaponMasterManager : MonoBehaviour
 {
-    public int selectedWeapon = 0; 
+    public int selectedWeapon = 0;
+    public static Action OnChangegun;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,7 @@ public class WeaponMasterManager : MonoBehaviour
         int previousSelectedWeapon = selectedWeapon;
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
-        { 
+        {
             if (selectedWeapon >= transform.childCount - 1)
                 selectedWeapon = 0;
             else
@@ -26,7 +28,7 @@ public class WeaponMasterManager : MonoBehaviour
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
-        { 
+        {
             if (selectedWeapon <= 0)
                 selectedWeapon = transform.childCount - 1;
             else
@@ -36,16 +38,19 @@ public class WeaponMasterManager : MonoBehaviour
         if (previousSelectedWeapon != selectedWeapon)
         {
             SelectWeapon();
+            OnChangegun?.Invoke();
         }
     }
 
-    void SelectWeapon(){
+    void SelectWeapon()
+    {
         int i = 0;
-        foreach (Transform weapon in transform) {
+        foreach (Transform weapon in transform)
+        {
             {
                 if (i == selectedWeapon)
                     weapon.gameObject.SetActive(true);
-                else 
+                else
                     weapon.gameObject.SetActive(false);
                 i++;
             }

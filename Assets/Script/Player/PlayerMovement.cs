@@ -40,8 +40,6 @@ public class PlayerMovement : MonoBehaviour
     private bool canJump = true;
     private bool inDelayJump = false;
     private float CameraAxisX = 0f;
-    private float CameraAxisY = 0f;
-
     private Vector3 playerDirection;
     private Rigidbody myRigidbody;
 

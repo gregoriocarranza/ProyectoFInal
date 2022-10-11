@@ -36,6 +36,7 @@ public class PlayerData : MonoBehaviour
         if (lifes == 0)
         {
             Debug.Log("Player Has been kiled");
+            OnDead?.Invoke();
             Destroy(gameObject);
         }
     }

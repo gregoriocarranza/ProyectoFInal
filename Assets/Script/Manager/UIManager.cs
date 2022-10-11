@@ -4,13 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class HealthBarrManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    private static HealthBarrManager instance;
-    public static HealthBarrManager Instance { get => instance; }
+    private static UIManager instance;
+    public static UIManager Instance { get => instance; }
     private PlayerData playerdata;
 
+    [Header("UI Vida")]
     [SerializeField] private Slider HealthBarr;
+    [SerializeField] private Text HealtCount;
+
+    [Header("UI Armas")]
+    [SerializeField] private Text MunitionCount;
+
+
     private void Awake()
     {
         if (instance == null)
@@ -24,33 +31,45 @@ public class HealthBarrManager : MonoBehaviour
         }
 
         PlayerData.OnDead += GameOver;
+
         PlayerData.InitHp += initHealthBarr;
         PlayerData.OnChangeHP += ajustHealthBarr;
-    }
-    void Start()
-    {
-        // playerdata = GetComponent<PlayerData>();
-        // initHealthBarr(playerdata.checkLifes());
 
+        Gun.IniMunition += initMunition;
+        Gun.OnChangeMunition += ajustMunition;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    // LifesCount-------------------------------------------
     public void initHealthBarr(int init)
     {
         Debug.Log(init);
         instance.HealthBarr.minValue = 0;
         instance.HealthBarr.maxValue = init;
+        instance.HealtCount.text = init.ToString();
     }
     public static void ajustHealthBarr(int num)
     {
 
         instance.HealthBarr.value = num;
+        instance.HealtCount.text = num.ToString();
     }
+    // MunitionCount-------------------------------------------
+
+    public void initMunition(int init)
+    {
+        instance.MunitionCount.text = init.ToString();
+    }
+
+    public static void ajustMunition(int num)
+    {
+        instance.MunitionCount.text = num.ToString();
+    }
+
+
+
+
+
+
     private void GameOver()
     {
         Debug.Log("Holaaa");
@@ -60,5 +79,9 @@ public class HealthBarrManager : MonoBehaviour
         PlayerData.OnDead -= GameOver;
         PlayerData.InitHp -= initHealthBarr;
         PlayerData.OnChangeHP -= ajustHealthBarr;
+
+
+        Gun.IniMunition -= initHealthBarr;
+        Gun.OnChangeMunition -= ajustHealthBarr;
     }
 }

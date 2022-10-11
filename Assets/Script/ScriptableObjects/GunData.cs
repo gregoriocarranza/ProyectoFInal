@@ -5,8 +5,9 @@ using UnityEngine;
 // public class GunData : using UnityEngine;
 
 [CreateAssetMenu(fileName = "GunData", menuName = "Weapons/GunData")]
-public class GunData : ScriptableObject {
-    
+public class GunData : ScriptableObject
+{
+
     public enum WeaponType
     {
         Automatic,
@@ -28,6 +29,6 @@ public class GunData : ScriptableObject {
     public float reloadTime;
 
     //[HideInInspector]
-    public bool reloading;
+    public bool reloading = false;
     public bool triggerPressed;
 }

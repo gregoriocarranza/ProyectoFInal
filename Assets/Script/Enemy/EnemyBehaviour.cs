@@ -102,7 +102,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     }
 
-    private void OnTakeDamage(int damage)
+    public void OnTakeDamage(int damage)
     {
         enemydata.health -= damage;
     }

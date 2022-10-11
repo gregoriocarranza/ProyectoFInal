@@ -141,6 +141,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7259449275913544009}
+  - component: {fileID: 8619541824665558138}
+  - component: {fileID: 7475916074412688959}
   m_Layer: 8
   m_Name: B012
   m_TagString: Untagged
@@ -166,6 +168,32 @@ Transform:
   m_Father: {fileID: 2975689133042209892}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8619541824665558138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553678136970432654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.7221195}
+  m_Center: {x: 0, y: 0.39999998, z: 0.18864793}
+--- !u!65 &7475916074412688959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553678136970432654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5541803, y: 0.7590523, z: 2.6464775}
+  m_Center: {x: -0.044173777, y: 1.3795259, z: 0.052205443}
 --- !u!1 &2975689133042632768
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +270,7 @@ GameObject:
   - component: {fileID: 2975689133033159556}
   - component: {fileID: 5143746028565812145}
   - component: {fileID: 6406938814821732100}
+  - component: {fileID: 7893339401206257634}
   m_Layer: 8
   m_Name: Torreta Misil
   m_TagString: Enemy
@@ -408,6 +437,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &7893339401206257634
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975689133042632772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 158.3264, y: 199.32727, z: 271.02722}
+  m_Center: {x: -1.8636763, y: 82.00159, z: 4.934776}
 --- !u!1 &2975689133042632774
 GameObject:
   m_ObjectHideFlags: 0
