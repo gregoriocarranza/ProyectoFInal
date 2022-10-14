@@ -10,16 +10,33 @@ public class BulletBehaviour : MonoBehaviour
     [SerializeField] private MunnitionData munnitionData;
     public static event Action<int> Damage;
 
+    private bool pause;
+
+    private void OnEnable()
+    {
+        UIManager.Pause += OnPause;
+    }
+
+    private void OnDisable()
+    {
+        UIManager.Pause -= OnPause;
+    }
+
+    public void OnPause(bool pauses)
+    {
+        pause = pauses;
+    }
+
     void Start()
     {
-        Invoke("DestroyMunition", munnitionData.DestroyTime);
+        Destroy(gameObject, munnitionData.DestroyTime);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if (!pause) Move();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,7 +47,7 @@ public class BulletBehaviour : MonoBehaviour
             {
                 Damage?.Invoke(munnitionData.damage);
             }
-            DestroyMunition();
+            Destroy(gameObject);
             Instantiate(munnitionData.EfectoDeDestruccion, gameObject.transform.position, gameObject.transform.rotation);
         }
     }
@@ -39,8 +56,4 @@ public class BulletBehaviour : MonoBehaviour
         transform.Translate(Vector3.forward * munnitionData.Speed * Time.deltaTime);
     }
 
-    private void DestroyMunition()
-    {
-        Destroy(gameObject);
-    }
 }

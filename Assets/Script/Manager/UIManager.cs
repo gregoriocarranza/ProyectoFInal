@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class UIManager : MonoBehaviour
     [Header("UI Armas")]
     [SerializeField] private Text MunitionCount;
 
+    [Header("Pantalla de Pausa")]
+    public GameObject MenuPausa;
+    public bool pausa = false;
+    public static Action<bool> Pause;
 
     private void Awake()
     {
@@ -37,8 +42,31 @@ public class UIManager : MonoBehaviour
 
         Gun.IniMunition += initMunition;
         Gun.OnChangeMunition += ajustMunition;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void Update()
+    {
+
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                pausa = !pausa;
+                MenuPausa.SetActive(pausa);
+                if (!pausa) Cursor.lockState = CursorLockMode.Locked; else Cursor.lockState = CursorLockMode.None;
+
+                Pause?.Invoke(pausa);
+            }
+        }
+    }
+    // Botones menu-------------------------------------------
+
+    public void CambiarNivel(int Indice)
+    {
+        SceneManager.LoadScene(Indice);
+    }
     // LifesCount-------------------------------------------
     public void initHealthBarr(int init)
     {

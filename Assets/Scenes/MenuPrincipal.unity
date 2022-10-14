@@ -497,6 +497,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IniciarNivel: 0
   IndiceNivel: 1
+  MenuPausa: {fileID: 0}
+  pausa: 0
 --- !u!4 &733267979
 Transform:
   m_ObjectHideFlags: 0

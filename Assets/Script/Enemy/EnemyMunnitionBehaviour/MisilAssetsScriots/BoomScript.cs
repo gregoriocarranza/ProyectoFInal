@@ -10,17 +10,8 @@ public class BoomScript : MonoBehaviour
         FinAudio = GetComponent<AudioSource>();
 
         FinAudio.PlayOneShot(FinAudio.clip, 0.7F);
-        Invoke("DESTROY", 4f);
-
+        Destroy(gameObject, 4f);
     }
 
 
-    void Update()
-    {
-
-    }
-    void DESTROY()
-    {
-        Destroy(gameObject);
-    }
 }

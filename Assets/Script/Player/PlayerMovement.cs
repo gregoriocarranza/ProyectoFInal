@@ -5,93 +5,104 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //---------------------- PROPIEDADES SERIALIZADAS ----------------------
-    [SerializeField]
-    [Range(1f, 2000f)]
-    private float movementForce = 3f;
+    [SerializeField][Range(1f, 2000f)] private float movementForce = 3f;
+    [SerializeField][Range(1f, 2000f)] private float jumpForce = 40f;
 
-    [SerializeField]
-    [Range(1f, 2000f)]
-    private float jumpForce = 40f;
+    [Range(1f, 200f)] private float velocidadMaxima = 5f;
+    [Range(0f, 100f)] public float sensibilidadEnX = 30f;
+    [Range(0f, 100f)] public float sensibilidadEnY = 30f;
 
-    [SerializeField]
-    [Range(1f, 200f)]
-    private float velocidadMaxima = 5f;
+    private float pivotvelocidadMaxima;
+    private float pivotsensibilidadX;
+    private float pivotsensibilidadY;
 
-    [SerializeField]
-    [Range(1f, 200f)]
-    private float jumpDelay = 1f;
-    [SerializeField]
-    [Range(30f, 100f)]
-    public float sensibilidad = 30f;
 
-    [SerializeField]
-    [Range(1f, 5f)]
-    public float velMult = 1.5f;
-    [SerializeField]
-    private Animator playerAnimator;
+    [SerializeField][Range(1f, 200f)] private float jumpDelay = 1f;
+    [SerializeField][Range(1f, 5f)] public float velMult = 1.5f;
+    [SerializeField] private Animator playerAnimator;
+    [SerializeField] private GameObject _1P_target;
+    [SerializeField] private GameObject _3P_target;
 
     //---------------------- PROPIEDADES PUBLICAS ----------------------
 
     public bool CanJump { get => canJump; set => canJump = value; }
     public Rigidbody playerrb { get => myRigidbody; set => myRigidbody = value; }
     public float VelocidadMaxima { get => velocidadMaxima; set => velocidadMaxima = value; }
-    
+
     //---------------------- PROPIEDADES PRIVADAS ----------------------
     private bool canJump = true;
     private bool inDelayJump = false;
     private float CameraAxisX = 0f;
+    private float CameraAxisY = 0f;
     private Vector3 playerDirection;
     private Rigidbody myRigidbody;
 
+    private bool pause = false;
+
+    private void OnEnable()
+    {
+        UIManager.Pause += OnPause;
+    }
+
+    private void OnDisable()
+    {
+        UIManager.Pause -= OnPause;
+    }
     void Start()
     {
+        pivotvelocidadMaxima = velocidadMaxima;
+        pivotsensibilidadX = sensibilidadEnX;
+        pivotsensibilidadY = sensibilidadEnY;
         playerrb = GetComponent<Rigidbody>();
     }
 
 
     void Update()
     {
-        RotatePlayer();
-
-        bool forward = Input.GetKeyDown(KeyCode.W);
-        bool back = Input.GetKeyDown(KeyCode.S);
-        bool left = Input.GetKeyDown(KeyCode.A);
-        bool right = Input.GetKeyDown(KeyCode.D);
-
-        if (forward) playerAnimator.SetTrigger("adelante");
-        if (back) playerAnimator.SetTrigger("atras");
-        if (left) playerAnimator.SetTrigger("izquierda");
-        if (right) playerAnimator.SetTrigger("derecha");
-
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        if (!pause)
         {
-            if (!IsAnimation("Reposo")) playerAnimator.SetTrigger("Reposo");
-        }
+            RotatePlayer();
 
-        playerDirection = Vector3.zero;
+            bool forward = Input.GetKeyDown(KeyCode.W);
+            bool back = Input.GetKeyDown(KeyCode.S);
+            bool left = Input.GetKeyDown(KeyCode.A);
+            bool right = Input.GetKeyDown(KeyCode.D);
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            playerDirection += Vector3.forward;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            playerDirection += Vector3.back;
-        }
+            if (forward) playerAnimator.SetTrigger("adelante");
+            if (back) playerAnimator.SetTrigger("atras");
+            if (left) playerAnimator.SetTrigger("izquierda");
+            if (right) playerAnimator.SetTrigger("derecha");
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            playerDirection += Vector3.right;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            playerDirection += Vector3.left;
-        }
+            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            {
+                if (!IsAnimation("Reposo")) playerAnimator.SetTrigger("Reposo");
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space) && canJump)
-        {
-            canJump = false;
+            playerDirection = Vector3.zero;
 
+            if (Input.GetKey(KeyCode.W))
+            {
+                playerDirection += Vector3.forward;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                playerDirection += Vector3.back;
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                playerDirection += Vector3.right;
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                playerDirection += Vector3.left;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && canJump)
+            {
+                canJump = false;
+
+            }
         }
     }
 
@@ -133,6 +144,24 @@ public class PlayerMovement : MonoBehaviour
     {
         CameraAxisX += Input.GetAxis("Mouse X");
         Quaternion newRotation = Quaternion.Euler(0, CameraAxisX, 0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, sensibilidad * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, sensibilidadEnX * Time.deltaTime);
+
+        CameraAxisY = Input.GetAxis("Mouse Y");
+        _1P_target.transform.position += new Vector3(0, CameraAxisY * sensibilidadEnY, 0);
+    }
+
+    public void OnPause(bool pauses)
+    {
+        pause = pauses;
+        // if (pauses)
+        // {
+        //     velocidadMaxima = 0;
+        //     sensibilidad = 0;
+        // }
+        // else
+        // {
+        //     velocidadMaxima = pivotvelocidadMaxima;
+        //     sensibilidad = pivotsensibilidad;
+        // }
     }
 }

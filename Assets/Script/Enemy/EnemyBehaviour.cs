@@ -8,7 +8,7 @@ public class EnemyBehaviour : MonoBehaviour
     private LayerMask Munition;
     AudioSource audioPlayer;
 
-
+    private bool pause;
 
     void Start()
     {
@@ -57,7 +57,7 @@ public class EnemyBehaviour : MonoBehaviour
     protected void EnemyRaycast(bool Is_follower, Transform FirstPoint, float rayDistance, Transform target, Animator EnemyAnimator, GameObject ToTansform)
     {
         RaycastHit hit;
-        if (Physics.Raycast(FirstPoint.position, FirstPoint.TransformDirection(Vector3.forward), out hit, rayDistance, ~Munition, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(FirstPoint.position, FirstPoint.TransformDirection(Vector3.forward), out hit, rayDistance, ~Munition, QueryTriggerInteraction.Ignore) && !pause)
         {
             // Debug.Log(hit.transform.tag);
             if (hit.transform.CompareTag("Player") && Is_follower == false)
@@ -96,9 +96,9 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void delayShoot()
     {
-        audioPlayer.PlayOneShot(enemydata.Shoot,0.7f);
+        audioPlayer.PlayOneShot(enemydata.Shoot, 0.7f);
         canShoot = true;
-        
+
 
     }
 
@@ -107,10 +107,26 @@ public class EnemyBehaviour : MonoBehaviour
         enemydata.health -= damage;
     }
 
-    private void DeathCheck(){
-        if (enemydata.health <= 0) 
+    private void DeathCheck()
+    {
+        if (enemydata.health <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnEnable()
+    {
+        UIManager.Pause += OnPause;
+    }
+
+    private void OnDisable()
+    {
+        UIManager.Pause -= OnPause;
+    }
+
+    public void OnPause(bool pauses)
+    {
+        pause = pauses;
     }
 }

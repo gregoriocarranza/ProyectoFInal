@@ -16,6 +16,8 @@ public class Gun : MonoBehaviour
     public static Action<int> OnChangeMunition;
     public static Action<Vector3, Quaternion> gunHit;
 
+    private bool pausa;
+
     AudioSource audioData;
 
     private void OnEnable()
@@ -25,6 +27,7 @@ public class Gun : MonoBehaviour
         PlayerShoot.shootInput += OnTriggerPressed;
         PlayerShoot.reloadInput += StartReload;
         PlayerShoot.triggerRelease += OnTriggerRelease;
+        UIManager.Pause += OnPause;
         OnChangeMunition?.Invoke(gunData.currentAmmo);
     }
 
@@ -34,18 +37,12 @@ public class Gun : MonoBehaviour
         PlayerShoot.shootInput -= OnTriggerPressed;
         PlayerShoot.reloadInput -= StartReload;
         PlayerShoot.triggerRelease -= OnTriggerRelease;
+        UIManager.Pause -= OnPause;
     }
 
     void Start()
     {
         audioData = GetComponent<AudioSource>();
-
-        PlayerShoot.shootInput += Shoot;
-        PlayerShoot.shootInput += OnTriggerPressed;
-        PlayerShoot.reloadInput += StartReload;
-        PlayerShoot.triggerRelease += OnTriggerRelease;
-
-        IniMunition?.Invoke(gunData.currentAmmo);
     }
 
     // Update is called once per frame
@@ -102,16 +99,18 @@ public class Gun : MonoBehaviour
         if (gunData.weaponType == 0) return (!gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 60f));
         else return (!gunData.reloading && !gunData.triggerPressed);
     }
-
+    public void OnPause(bool pauses)
+    {
+        pausa = pauses;
+    }
     private void Shoot()
     {
         //audioData.Play();
 
-        Debug.Log("Entro a Shoot de Gun");
-        if (gunData.currentAmmo > 0)
+
+        if (gunData.currentAmmo > 0 && !pausa)
         {
-            Debug.Log("currentAmmo mayor a 0");
-            Debug.Log(CanShoot());
+            Debug.Log("Disparo");
             if (CanShoot())
             {
                 shotFired?.Invoke();
@@ -120,7 +119,7 @@ public class Gun : MonoBehaviour
 
                 if (Physics.Raycast(muzzle.position, muzzle.forward, out RaycastHit hitInfo, gunData.maxDistance))
                 {
-                    Debug.Log("Raycast Hit");
+                    // Debug.Log("Raycast Hit");
 
                     // Paso Vector3 Position y dirección normal del hit para hacer un vfx de impacto
                     gunHit?.Invoke(hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
@@ -128,26 +127,23 @@ public class Gun : MonoBehaviour
                     if (hitInfo.transform.CompareTag("Enemy"))
                     {
 
-                        Debug.Log("Hit Enemy: " + hitInfo.transform.tag);
-                        Debug.Log("Hit Enemy: " + hitInfo.transform.name);
+                        // Debug.Log("Hit Enemy: " + hitInfo.transform.tag);
+                        // Debug.Log("Hit Enemy: " + hitInfo.transform.name);
                         // shotEnemy?.Invoke(gunData.damage);
                         hitInfo.collider.gameObject.GetComponent<EnemyBehaviour>().OnTakeDamage(gunData.damage);
                     }
 
                     if (hitInfo.transform.CompareTag("WoodenCrate"))
                     {
-                        Debug.Log("Hit WoodenCrate: " + hitInfo.transform.tag);
+                        // Debug.Log("Hit WoodenCrate: " + hitInfo.transform.tag);
                         hitInfo.collider.gameObject.GetComponent<WoodenCrateBehaviour>().TakeDamage(gunData.damage);
                     }
 
                     if (hitInfo.transform.CompareTag("GlassBottle"))
                     {
-                        Debug.Log("Hit GlassBottle: " + hitInfo.transform.tag);
+                        // Debug.Log("Hit GlassBottle: " + hitInfo.transform.tag);
                         hitInfo.collider.gameObject.GetComponent<GlassBottleBehaviour>().TakeDamage(gunData.damage);
                     }
-
-                    //IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>();
-                    //damageable?.TakeDamage(gunData.damage);
                 }
 
                 gunData.currentAmmo--;

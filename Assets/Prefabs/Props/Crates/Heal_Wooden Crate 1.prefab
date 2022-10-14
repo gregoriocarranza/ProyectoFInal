@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7668016358965335150}
   - component: {fileID: 1260549764574161607}
   - component: {fileID: 1674304183}
-  - component: {fileID: 8564919898942229408}
   m_Layer: 0
   m_Name: Heal_Wooden Crate 1
   m_TagString: WoodenCrate
@@ -129,16 +128,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 1344187639900044039, guid: 150c9fc6c2c6533428613f1dae8da074, type: 3}
---- !u!114 &8564919898942229408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654093026443276854}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5462bc5286d24ee42830455d25f5b1f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedVersion: {fileID: 1344187639900044039, guid: cd90220282429c846b3d334ce0c49fa5, type: 3}

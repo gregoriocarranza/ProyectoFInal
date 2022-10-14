@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ComportamientoDeMenu : MonoBehaviour
 {
-
+    private static ComportamientoDeMenu instance;
     public bool IniciarNivel;
     public int IndiceNivel;
 
@@ -15,9 +15,7 @@ public class ComportamientoDeMenu : MonoBehaviour
         if (IniciarNivel)
         {
             CambiarNivel(IndiceNivel);
-
         }
-
     }
 
     public void CambiarNivel(int Indice)
