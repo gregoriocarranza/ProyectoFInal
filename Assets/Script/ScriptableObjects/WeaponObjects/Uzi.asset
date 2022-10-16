@@ -9,14 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4492d1f245298a4abace5e9087ed224, type: 3}
-  m_Name: Enemy-Lv1
+  m_Script: {fileID: 11500000, guid: 902787638dcc6d64c95460bb5d4acdcd, type: 3}
+  m_Name: Uzi
   m_EditorClassIdentifier: 
-  Speed: 2
-  Is_follower: 1
-  rayDistance: 40
-  health: -20
-  bullet: {fileID: 0}
-  DelayShoot: 1
-  ChargeShoot: {fileID: 0}
-  Shoot: {fileID: 0}
+  name: 
+  weaponType: 0
+  damage: 20
+  maxDistance: 100
+  fireRate: 600
+  currentAmmo: 18
+  magSize: 18
+  reloadTime: 1
+  reloading: 0
+  triggerPressed: 0
