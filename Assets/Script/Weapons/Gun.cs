@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private GunData gunData;
     [SerializeField] private Transform muzzle;
+    [SerializeField] private Camera mainCamera;
 
     private float timeSinceLastShot;
     public static Action shotFired;
@@ -116,8 +117,9 @@ public class Gun : MonoBehaviour
                 shotFired?.Invoke();
                 // Play gun shooting sound
                 audioData.PlayOneShot(audioData.clip, 0.7F);
-
-                if (Physics.Raycast(muzzle.position, muzzle.forward, out RaycastHit hitInfo, gunData.maxDistance))
+                
+                // if (Physics.Raycast(muzzle.position, muzzle.forward, out RaycastHit hitInfo, gunData.maxDistance))
+                if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hitInfo, gunData.maxDistance))
                 {
                     // Debug.Log("Raycast Hit");
 
