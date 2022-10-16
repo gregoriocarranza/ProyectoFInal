@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 3380727917413872820}
   - component: {fileID: 7362390940348271678}
   - component: {fileID: 5424295254350236378}
+  - component: {fileID: 886998683282804882}
   m_Layer: 8
   m_Name: Torreta minigun
   m_TagString: Enemy
@@ -218,7 +219,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -302,6 +303,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &886998683282804882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3380727917404374900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6996382, y: 2.1534576, z: 2.229094}
+  m_Center: {x: 0.000000059604645, y: 0.8887296, z: 0.037818193}
 --- !u!1 &3380727917404374902
 GameObject:
   m_ObjectHideFlags: 0

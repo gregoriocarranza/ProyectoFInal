@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 2009454330956980858}
   - component: {fileID: 2338518691653838147}
   - component: {fileID: 1929207154}
+  - component: {fileID: 1839300071818001039}
   m_Layer: 8
   m_Name: Torreta Laser
   m_TagString: Enemy
@@ -305,7 +306,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -389,6 +390,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1839300071818001039
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009454330956980859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 144.00346, y: 220.16058, z: 237.17294}
+  m_Center: {x: 5.29778, y: 92.41824, z: 11.445236}
 --- !u!1 &2009454331112838081
 GameObject:
   m_ObjectHideFlags: 0
