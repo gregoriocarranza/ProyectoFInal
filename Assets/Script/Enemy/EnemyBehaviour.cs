@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] protected EnemyData enemydata;
+    public int EnemyHealth;
     private LayerMask Munition;
     AudioSource audioPlayer;
 
@@ -12,7 +13,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Start()
     {
-        enemydata.health = 100;
+        EnemyHealth = enemydata.health;
         audioPlayer = GetComponent<AudioSource>();
         Gun.shotEnemy += OnTakeDamage;
     }
@@ -104,12 +105,12 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void OnTakeDamage(int damage)
     {
-        enemydata.health -= damage;
+        EnemyHealth -= damage;
     }
 
     private void DeathCheck()
     {
-        if (enemydata.health <= 0)
+        if (EnemyHealth <= 0)
         {
             Destroy(gameObject);
         }
