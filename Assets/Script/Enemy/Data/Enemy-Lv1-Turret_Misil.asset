@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1
   Is_follower: 0
-  rayDistance: 20
+  rayDistance: 70
   health: 2
   bullet: {fileID: 722621557783476447, guid: 1d54046dde1d6664ca15295ebf11d92d, type: 3}
   DelayShoot: 1
