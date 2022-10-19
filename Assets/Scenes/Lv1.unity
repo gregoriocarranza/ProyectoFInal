@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657695, g: 0.49641138, b: 0.5748176, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657755, g: 0.4964127, b: 0.57481825, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -801,6 +801,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4684974035988986, guid: 63656ca5180e1654f9b4059b3ee8be33, type: 3}
   m_PrefabInstance: {fileID: 2048092285}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &219441736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+  m_PrefabInstance: {fileID: 531939514}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &226090764 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1460388113, guid: 1c8fbc557927a2d45802c87370ef9576, type: 3}
@@ -1133,6 +1138,83 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &531939514
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1150961499}
+    m_Modifications:
+    - target: {fileID: 374168587752721784, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 374168587752721784, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: sensitivityMultiplier
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022991543179248500, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1150961498}
+    - target: {fileID: 1790054081509250112, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1150961498}
+    - target: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203994577630393087, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967922316311445061, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: m_Name
+      value: WeaponMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211763124126670427, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1150961498}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
 --- !u!1 &542890362
 GameObject:
   m_ObjectHideFlags: 0

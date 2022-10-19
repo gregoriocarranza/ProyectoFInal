@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField][Range(1f, 2000f)] private float jumpForce = 40f;
 
     [Range(1f, 200f)] private float velocidadMaxima = 5f;
-    [Range(0f, 100f)] public float sensibilidadEnX = 30f;
+    [Range(0f, 100f)] public float sensibilidadEnX = 90f;
     [Range(0f, 100f)] public float sensibilidadEnY = 30f;
 
     private float pivotvelocidadMaxima;
