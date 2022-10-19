@@ -111,7 +111,7 @@ public class Gun : MonoBehaviour
 
         if (gunData.currentAmmo > 0 && !pausa)
         {
-            Debug.Log("Disparo");
+            Debug.Log("Disparo de "+gameObject.name);
             if (CanShoot())
             {
                 shotFired?.Invoke();
