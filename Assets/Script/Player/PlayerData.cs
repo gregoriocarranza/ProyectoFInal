@@ -50,7 +50,14 @@ public class PlayerData : MonoBehaviour
     public void damage(int a)
     {
         lifes = lifes - (a * dificult);
-        OnChangeHP?.Invoke(lifes);
+        if (lifes < 0)
+        {
+            OnChangeHP?.Invoke(0);
+        }
+        else
+        {
+            OnChangeHP?.Invoke(lifes);
+        }
     }
     private void OnDisable()
     {

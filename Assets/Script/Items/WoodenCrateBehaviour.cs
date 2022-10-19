@@ -6,7 +6,7 @@ public class WoodenCrateBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject destroyedVersion;
     [SerializeField] GameObject SpawnItem;
-    private int life = 100;
+    public int life = 15;
 
     // Start is called before the first frame update
     void Start()
