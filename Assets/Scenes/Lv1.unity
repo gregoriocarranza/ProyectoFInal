@@ -4009,6 +4009,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1150961499}
     m_Modifications:
+    - target: {fileID: 1022991543179248500, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1150961498}
+    - target: {fileID: 1790054081509250112, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1150961498}
     - target: {fileID: 2742741436502703898, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4069,6 +4077,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7211763124126670427, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1150961498}
     - target: {fileID: 8785172635661731444, guid: da5e542b27e6ca7409d85f07bb000807, type: 3}
       propertyPath: m_Enabled
       value: 0

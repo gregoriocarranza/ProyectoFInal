@@ -11,10 +11,18 @@ public class GunVFX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+    private void OnEnable()
+    {
         Gun.shotFired += OnRoundShot;
         Gun.gunHit += OnGunHit;
     }
-
+    private void OnDisable()
+    {
+        Gun.shotFired -= OnRoundShot;
+        Gun.gunHit -= OnGunHit;
+    }
 
     private void OnRoundShot()
     {
