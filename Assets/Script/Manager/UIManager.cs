@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
         WinScreen.SetActive(false);
         GameOverScreen.SetActive(false);
 
+
         if (instance == null)
         {
             instance = this;
@@ -57,7 +58,8 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        initCoin();
+        initCoin(0);
+
         PlayerData.OnDead += GameOver;
 
         PlayerData.InitHp += initHealthBarr;
@@ -131,9 +133,10 @@ public class UIManager : MonoBehaviour
 
     // CoinCount-------------------------------------------
 
-    public void initCoin()
+    public void initCoin(int init)
     {
-        instance.CoinCount.text = instance.PlayerCoins.ToString() + "/" + instance.MaxCoins.ToString();
+        instance.CoinCount.text = init.ToString() + "/" + instance.MaxCoins.ToString();
+        instance.PlayerCoins = 0;
     }
 
     public static void CoinGrabed(int coin)
@@ -171,5 +174,7 @@ public class UIManager : MonoBehaviour
 
         Gun.IniMunition -= initHealthBarr;
         Gun.OnChangeMunition -= ajustHealthBarr;
+
+        CoinBehaviour.CoinGrabed -= CoinGrabed;
     }
 }

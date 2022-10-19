@@ -721,6 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7b0311d2305a04cbb7152bfb3e15dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Menues: []
   IniciarNivel: 0
   IndiceNivel: 0
 --- !u!1001 &321728410
@@ -3359,6 +3360,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1962358746}
     m_Modifications:
+    - target: {fileID: 563272147988569040, guid: eeabfdb48617a4b4c92a407a5a7deeeb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 276261655}
+    - target: {fileID: 563272147988569040, guid: eeabfdb48617a4b4c92a407a5a7deeeb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CambiarNivel
+      objectReference: {fileID: 0}
+    - target: {fileID: 563272147988569040, guid: eeabfdb48617a4b4c92a407a5a7deeeb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ComportamientoDeMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 563272148030048106, guid: eeabfdb48617a4b4c92a407a5a7deeeb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

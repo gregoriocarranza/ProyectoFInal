@@ -8,7 +8,7 @@ public class ComportamientoDeMenu : MonoBehaviour
 {
     private static ComportamientoDeMenu instance;
     [SerializeField] private GameObject[] Menues;
-    private int i = 0;
+    private int i = 1;
     public bool IniciarNivel;
     public int IndiceNivel;
 
