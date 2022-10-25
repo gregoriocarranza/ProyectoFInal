@@ -28,7 +28,7 @@ public class ElectricTorchOnOff : MonoBehaviour
 	[Space]
 	public bool _PowerPickUp = false;
 	[Space]
-	public float intensityLight = 2.5F;
+	public float intensityLight = 10F;
 	private bool _flashLightOn = false;
 	[SerializeField] float _lightTime = 0.05f;
 

@@ -19,7 +19,7 @@ public class TorchController : MonoBehaviour
     private void LateUpdate()
     {
 
-        transform.LookAt(Target.transform.position);
+         transform.LookAt(Target.transform.position);
 
 
     }
