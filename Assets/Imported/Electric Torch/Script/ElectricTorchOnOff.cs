@@ -29,7 +29,7 @@ public class ElectricTorchOnOff : MonoBehaviour
 	public bool _PowerPickUp = false;
 	[Space]
 	public float intensityLight = 10F;
-	private bool _flashLightOn = false;
+	private bool _flashLightOn = true;
 	[SerializeField] float _lightTime = 0.05f;
 
 
@@ -59,7 +59,7 @@ public class ElectricTorchOnOff : MonoBehaviour
 		}
         //
 
-        switch (modoLightChoose)
+        /*switch (modoLightChoose)
         {
             case LightChoose.noBattery:
 				NoBatteryLight();
@@ -67,7 +67,7 @@ public class ElectricTorchOnOff : MonoBehaviour
             case LightChoose.withBattery:
 				WithBatteryLight();
 				break;
-        }
+        }*/
 	}
 
 	void InputKey()
