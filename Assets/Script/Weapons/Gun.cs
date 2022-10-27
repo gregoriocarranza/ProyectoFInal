@@ -19,7 +19,8 @@ public class Gun : MonoBehaviour
 
     private bool pausa;
 
-    AudioSource audioData;
+    AudioSource shootSound;
+    AudioSource reloadSound;
 
     private void OnEnable()
     {
@@ -43,7 +44,9 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
-        audioData = GetComponent<AudioSource>();
+        AudioSource[] audios = GetComponents<AudioSource>();
+        shootSound = audios[0];
+        reloadSound = audios[1];
     }
 
     // Update is called once per frame
@@ -72,6 +75,8 @@ public class Gun : MonoBehaviour
     }
     private IEnumerator Reload()
     {
+        reloadSound.PlayOneShot(reloadSound.clip, 0.7F); // Play ReloadSound
+
         gunData.reloading = true;
 
         yield return new WaitForSeconds(gunData.reloadTime);
@@ -106,7 +111,7 @@ public class Gun : MonoBehaviour
     }
     private void Shoot()
     {
-        //audioData.Play();
+        //shootSound.Play();
 
 
         if (gunData.currentAmmo > 0 && !pausa)
@@ -116,7 +121,8 @@ public class Gun : MonoBehaviour
             {
                 shotFired?.Invoke();
                 // Play gun shooting sound
-                audioData.PlayOneShot(audioData.clip, 0.7F);
+                shootSound.PlayOneShot(shootSound.clip, 0.7F);
+                //AudioClip.PlayOneShot(shootSound, 0.7f);
                 
                 // if (Physics.Raycast(muzzle.position, muzzle.forward, out RaycastHit hitInfo, gunData.maxDistance))
                 if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hitInfo, gunData.maxDistance))

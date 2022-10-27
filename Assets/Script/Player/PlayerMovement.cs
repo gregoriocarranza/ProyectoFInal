@@ -83,8 +83,21 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 playerDirection += Vector3.forward;
+                //stepSound.PlayDelayed(0.033f);
             }
-            else if (Input.GetKey(KeyCode.S))
+
+            /*if (Input.GetKeyDown(KeyCode.W))
+            {
+                //stepSound.PlayOneShot(stepSound.clip, 0.7F);
+                //stepSound.PlayDelayed(0.033f);
+            } 
+            
+            if (Input.GetKeyUp(KeyCode.W)) 
+            { 
+                //stepSound.Pause(); 
+            }*/
+
+            if (Input.GetKey(KeyCode.S))
             {
                 playerDirection += Vector3.back;
             }
@@ -93,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 playerDirection += Vector3.right;
             }
+
             else if (Input.GetKey(KeyCode.A))
             {
                 playerDirection += Vector3.left;
